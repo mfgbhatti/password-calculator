@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+}
+.container {
+  border-radius: 35px;
+  width: 320px;
+  margin-top: 150px;
+  padding-bottom: 50px;
+  background: linear-gradient(225deg, #cacaca, #f0f0f0);
+  box-shadow: -20px 20px 60px #bebebe, 20px -20px 60px #ffffff;
+}
+.main {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 15px 0 15px;
+  text-align: center;
+}
+.showhide {
+  position: relative;
+  width: 80px;
+}
+.showhide-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.showhide-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 3px -3px 4px #ffffff, inset -3px 3px 4px #00000066;
+}
+
+.showhide-label,
+.showhide-inner:before,
+.showhide-inner:after {
+  border-radius: 20px;
+}
+.showhide-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.showhide-inner:before,
+.showhide-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.showhide-inner:before {
+  content: "SHOW";
+  padding-left: 10px;
+  background-color: #49e845;
+  color: #fff;
+  box-shadow: inset 3px -3px 4px #b3fcb1, inset -3px 3px 4px #00000066;
+}
+.showhide-inner:after {
+  content: "HIDE";
+  padding-right: 10px;
+  color: #999999;
+  text-align: right;
+}
+.showhide-switch {
+  display: block;
+  width: 20px;
+  margin: 6px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 46px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+  box-shadow: 3px -3px 4px #ffffff, -3px 3px 4px #00000066;
+}
+.showhide-checkbox:checked + .showhide-label .showhide-inner {
+  margin-left: 0;
+}
+.showhide-checkbox:checked + .showhide-label .showhide-switch {
+  right: 0px;
+}
+.top,
+.middle {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.password {
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  outline: none;
+  font-size: 1.3em;
+  border-radius: 8px;
+  line-height: 1.3;
+  background-color: inherit;
+  border: none;
+  box-shadow: inset 3px -3px 4px #ffffff, inset -3px 3px 4px #00000066;
+}
+.progress_container {
+  display: flex;
+}
+
+#strength,
+#char_count {
+  margin-top: 10px;
+  width: 150px;
+  position: relative;
+}
+#strength:after {
+  content: attr(data-strength);
+  white-space: pre;
+}
+
+#char_count:after {
+  content: attr(data-char_count);
+}
+#strength:after,
+#char_count:after {
+  margin-left: -15px;
+  margin-top: -40px;
+  top: 60px;
+  left: 45px;
+  border-radius: 100%;
+  line-height: 80px;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+#svg {
+  position: relative;
+}
+
+#bar,
+#count,
+#strength:before,
+#strength:after,
+#char_count:after,
+#char_count:before {
+  width: 92px;
+  height: 92px;
+  position: absolute;
+}
+#strength:before,
+#char_count:before {
+  content: "";
+  top: 6px;
+  left: 5px;
+  border-radius: 50%;
+  border: 0.5em solid #cacaca;
+  box-shadow: inset 3px -3px 4px #ffffff, inset -3px 3px 4px #00000066;
+}
+#bar,
+#count {
+  transition: stroke-dashoffset 0.4s linear;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke: limegreen;
+  stroke-dashoffset: 600;
+}
+.crack {
+  font-size: 1.3em;
+}
+#crack {
+  margin-left: 15px;
+  font-weight: 400;
+}
+.contain {
+  margin-top: 20px;
+}
+.contain ul {
+  display: flex;
+  list-style: none;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.hasit,
+.type_valid {
+  border-radius: 5px;
+  text-align: center;
+  width: 85px;
+  height: 25px;
+}
+.hasit {
+  box-shadow: inset 3px -3px 4px #ffffff, inset -3px 3px 4px #00000066;
+}
+.type_valid {
+  background-color: limegreen;
+  color: white;
+  font-weight: 400;
+  box-shadow: 3px -3px 4px #ffffff, -3px 3px 4px #00000066;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #bbb;
+    color: #fff;
+    font-weight: 400;
+}
