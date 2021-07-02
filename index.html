@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Password Strength Checker lets you securely test your password strength. It helps improve your password security, keeping you safe online.">
+    <meta name="description" content="This is a developed by using html5, css3 and based on zxcvbn.js released on github. No password is stored on over page or on database">
+    <meta name="robots" content="all,follow,index">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <title>Password Strngth Checker</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main">Password Strength Checker</h1>
+        <div class="top">
+            <div class="showhide">
+                <input type="checkbox" name="showhide" class="showhide-checkbox" id="showhide" tabindex="0" onclick="toggleShowHide(this)">
+                <label class="showhide-label" for="showhide">
+                    <span class="showhide-inner"></span>
+                    <span class="showhide-switch"></span>
+                </label>
+            </div>
+            <input type="password" class="password" id="password" placeholder="Type your password" onkeyup="startChecking(this.value);" value="">
+            <div class="progress_container">
+                <div id="strength" data-strength="No Password">
+                    <svg id="svg">
+                        <circle id="bar" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="600"></circle>
+                    </svg>
+                </div>
+                <div id="char_count" data-char_count="0 Charachter">
+                    <svg id="svg">
+                        <circle id="count" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="600"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="crack">Guess Time:
+                <span id="crack">0 Second</span>
+            </div>
+            <div class="contain">
+                <ul>
+                    <li id="has_lower" class="hasit">Lowercase</li>
+                    <li id="has_upper" class="hasit">Uppercase</li>
+                    <li id="has_symb" class="hasit">Symbols</li>
+                </ul>
+            </div>
+            <div class="contain">
+                <ul>
+                    <li id="has_numb" class="hasit">Numers</li>
+                    <li id="has_pass" class="hasit">Passwords</li>
+                    <li id="has_name" class="hasit">Name</li>
+                </ul>
+            </div>
+            <div class="contain">
+                <ul>
+                    <li id="has_tv" class="hasit">Tv & Film</li>
+                    <li id="has_eng" class="hasit">English</li>
+                    <li id="has_date" class="hasit">Date</li>
+                </ul>
+            </div>
+            <div class="contain">
+                <ul>
+                    <li id="has_dic" class="hasit">Dictionary</li>
+                    <li id="has_spa" class="hasit">Spatial</li>
+                    <li id="has_repeat" class="hasit">Reapeat</li>
+                </ul>
+            <div class="contain">
+                <ul>
+                <li id="has_brute" class="hasit">Bruteforce</li>
+                <li id="has_seq" class="hasit">Sequence</li>
+                <li id="has_regex" class="hasit">Regex</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">farhan ghani</div>
+    <script type="text/javascript" src="./zxcvbn.js"></script>
+</body>
+</html>
